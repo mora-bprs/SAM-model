@@ -1,0 +1,5 @@
+__pycache__
+box_train 
+box_train.zip
+FastSAM-s.pt
+FastSAM-x.pt
