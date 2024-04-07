@@ -26,8 +26,6 @@ model = get_model(model_name)
 
 # image_path = input("Enter the image path >>>")
 
-
-
 image_path = "box_train/train/box_42.jpg"
 # image_path = r"E:\Projects Archive\3_EDR-bin picking\SAM Model\box_train\train\box_104.jpg" #not fine
 # image_path = "./box_train/train/box_17.jpg" # fine
@@ -56,43 +54,3 @@ annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR)
 cv2.imshow("Annotated image", annotated_frame)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# plt.imshow(annotated_frame)
-# cv2.imshow('Webcam for Box identification', annotated_frame)   
-    
-# # Initialize the video capture object with the index of the webcam (usually 0)
-# cap = cv2.VideoCapture(camera_index)
-
-# while True:
-#     ret, frame = cap.read()  # Read frame from webcam
-
-#     if not ret:
-#         print("Error: Couldn't read frame.")
-#         break
-
-#     box_corners = get_box_coordinates(image, model, device, False, False, False)  # Get ROI points
-#     # box_corners = ((100, 100), (200, 100), (100, 200), (200, 200))  # Dummy points
-#     # print(type(frame))
-#     # annotated_frame = plot_points_on_frame(frame, box_corners)  # Plot ROI on frame
-#     print(box_corners)
-#     print("box_corners", type(box_corners))
-#     print(type(box_corners[0]))
-#     annotated_frame = plot_points_on_frame(image, box_corners)
-#     cv2.imshow('Webcam for Box identification', annotated_frame)  # Display annotated frame
-
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-#     break
-
-# ############################################################################################################
-
-# # Release the capture object and close the window
-# cap.release()
-# cv2.destroyAllWindows()
-
-
-
-
-
-
-    
-    
