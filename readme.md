@@ -1,7 +1,3 @@
+# mora-bprs/ SAM-model 
 
-
-run this one to install pip in linux
-
-sudo apt install python3-pip
-
-pip3 install -r requirements.txt
+Documentation at https://mora-bprs.github.io/docs/models/sam/
