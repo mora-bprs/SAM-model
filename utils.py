@@ -10,6 +10,21 @@ from fastsam import FastSAM, FastSAMPrompt
 # updated code 
 # updated code 
 def get_bounding_box_coordinates(mask):
+    """
+    Calculate the coordinates of the bounding box surrounding the True region in the mask.
+
+    Parameters
+    ----------
+    mask : np.array
+        Binary mask where True indicates the region of interest.
+
+    Returns
+    -------
+    dict
+        Dictionary containing the coordinates of the corners of the bounding box.
+        Dictionary keys: "top_left", "top_right", "bottom_right", "bottom_left".
+        Dictionary elements: tuple : (y, x) coordinates of the corners.
+    """
     # Find the indices where the mask is True
     true_indices = np.argwhere(mask)
 
@@ -26,11 +41,10 @@ def get_bounding_box_coordinates(mask):
     height = bottom_right[0] - top_left[0]
 
     # make a numpy array for top_right and bottom_left
-    top_right = ( top_left[0], top_left[1] + width)
-    bottom_left = (top_left[0] + height, top_left[1] )
+    top_right = (top_left[0], top_left[1] + width)
+    bottom_left = (top_left[0] + height, top_left[1])
 
-    return {"top_left":top_left, "top_right":top_right, "bottom_right":bottom_right, "bottom_left":bottom_left}
-
+    return {"top_left": top_left, "top_right": top_right, "bottom_right": bottom_right, "bottom_left": bottom_left}
 
 def get_device():
     """
@@ -147,58 +161,76 @@ def annotate_square_corners(image, top_left, top_right, bottom_left, bottom_righ
   plt.show()
 
   
-def get_box_coordinates(img, model, device,  showOriginalImage=False, showPoints=False, showPlotMaskWithHighestScore=True):
+
+
+def get_box_coordinates(img, model, device, showOriginalImage=False, showPoints=False, showPlotMaskWithHighestScore=True):
+    """
+    Parameters
+    ----------
+    img : np.array
+        Image frame.
+    model : object
+        Model object.
+    device : str
+        Device identifier.
+    showOriginalImage : bool, optional
+        Whether to show the original image. Default is False.
+    showPoints : bool, optional
+        Whether to show points. Default is False.
+    showPlotMaskWithHighestScore : bool, optional
+        Whether to plot the mask with the highest score. Default is True.
+
+    Returns
+    -------
+    bounding_box_coords_dict : dict
+        Dictionary containing the coordinates of the corners of the bounding box.
+        Dictionary keys: "top_left", "top_right", "bottom_right", "bottom_left".
+        Dictionary elements: tuple : (y, x) coordinates of the corners.
+    """
   
+    # plot original image
+    if showOriginalImage:
+        plot_image(img)
 
-  # plot original image
-  if showOriginalImage:
-    plot_image(img)
+    # get image dimensions
+    img_height, img_width, _ = img.shape
 
-  # get image dimensions
-  img_height, img_width, _ = img.shape
+    # get centre point coordinates
+    center_point_coords = [int(img_width / 2), int(img_height / 2)]
+    input_point = np.array([center_point_coords])
+    input_label = np.array([1])
 
-  # get centre point coordinates
-  center_point_coords = [ int(img_width/2), int(img_height/2)]
-  input_point = np.array([center_point_coords])
-  input_label = np.array([1])
+    if showPoints:
+        plt.figure(figsize=(10, 10))
+        plt.imshow(img)
+        show_points(input_point, input_label, plt.gca())
+        plt.axis('on')
+        plt.show()
 
-  if showPoints:
-    plt.figure(figsize=(10,10))
-    plt.imshow(img)
-    show_points(input_point, input_label, plt.gca())
-    plt.axis('on')
-    plt.show()
+    # generate the mask in the relevant area
+    fast_sam_predictor = model(img, device=device, retina_masks=True, imgsz=img_width, conf=0.4, iou=0.9)
+    fast_sam_prompt_process = FastSAMPrompt(img, fast_sam_predictor, device=device)
 
+    # point prompt
+    # points default [[0,0]] [[x1,y1],[x2,y2]]
+    # point_label default [0] [1,0] 0:background, 1:foreground
+    img_mask = fast_sam_prompt_process.point_prompt(points=input_point, pointlabel=input_label)
 
-  # draw a rectangle that makes the center point of image
+    # plot_mask_with_score(img, "FastSAM output", img_mask, input_point, input_label )
 
-  # generate the mask in the relevant area
-  
-    
-  fast_sam_predictor = model(img, device=device, retina_masks=True, imgsz=img_width, conf=0.4, iou=0.9,)
-  fast_sam_prompt_process = FastSAMPrompt(img, fast_sam_predictor, device=device)
+    # reshape image mask
+    # print(img_mask.shape)
+    img_mask = np.transpose(img_mask, (1, 2, 0))
+    # print(img_mask.shape)
 
-  # point prompt
-  # points default [[0,0]] [[x1,y1],[x2,y2]]
-  # point_label default [0] [1,0] 0:background, 1:foreground
-  img_mask = fast_sam_prompt_process.point_prompt(points=input_point, pointlabel=input_label)
+    if showPlotMaskWithHighestScore:
+        plot_square(img_mask)
 
+    # get the rectangular boxes
+    bounding_box_coords_dict = get_bounding_box_coordinates(img_mask)
 
-  # plot_mask_with_score(img, "FastSAM output", img_mask, input_point, input_label )
-
-  # reshape image mask
-  # print(img_mask.shape)
-  img_mask = np.transpose(img_mask, (1, 2, 0))
-  # print(img_mask.shape)
-
-  if showPlotMaskWithHighestScore:
-    plot_square(img_mask)
-
-  # get the rectangular boxes
-  bounding_box_coords_dict = get_bounding_box_coordinates(img_mask)
-
-  # get the coordinates of the rectangular bounding box
-  return bounding_box_coords_dict
+    # get the coordinates of the rectangular bounding box
+    return bounding_box_coords_dict
 
 
 def get_image_with_box_corners(frame, points_dict):
