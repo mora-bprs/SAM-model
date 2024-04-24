@@ -3,3 +3,5 @@ box_train
 box_train.zip
 FastSAM-s.pt
 FastSAM-x.pt
+.venv/
+
