@@ -10,7 +10,8 @@
         "imread",
         "imshow",
         "linewidth",
-        "torchvision"
+        "torchvision",
+        "yachalk"
     ],
     "cSpell.allowCompoundWords": true
 }

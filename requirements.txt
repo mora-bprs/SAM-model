@@ -6,3 +6,4 @@ torchvision
 segment-anything-fast
 ipykernel
 gdown
+yachalk
