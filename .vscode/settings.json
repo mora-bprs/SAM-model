@@ -6,7 +6,9 @@
         "fastsam",
         "figsize",
         "gdown",
+        "imgsz",
         "imread",
+        "imshow",
         "linewidth",
         "torchvision"
     ],
