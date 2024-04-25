@@ -29,6 +29,7 @@ Currently fastSAM.ipynb is partially ready for public consumption
         pip install -r requirements.txt
         ```
     - Run The Notebook in VSCode with Python and Jupyter Extensions or In the Jupyter Environment
+    - Set the `INITIALIZED` variable accordingly
 
 
 WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/docs/models/sam/)
@@ -48,3 +49,4 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 - [ ] Implement Python scripts for implementation
 - [ ] Integration with webcam
 - [ ] Move Nix configuration to separate branch
+- [ ] Prepare the branch for merging

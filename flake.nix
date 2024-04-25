@@ -20,7 +20,7 @@
         packages = with pkgs;
           [python311]
           ++ (with pkgs.python311Packages; [
-            tkinter
+            # tkinter
             pip
             venvShellHook
           ]);
