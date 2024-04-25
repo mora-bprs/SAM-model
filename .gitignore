@@ -1,7 +1,18 @@
+# python housekeeping
 __pycache__
-box_train 
-box_train.zip
+.venv/
+venv/
+
+# model files
 FastSAM-s.pt
 FastSAM-x.pt
-.venv/
+FastSAM.pt
 
+# data files
+train/
+box_train.zip
+**/FastSAM/
+
+.direnv/
+
+annotate/

@@ -1,3 +1,8 @@
-torch==2.2.2
-torchvision==0.17.2
-segment-anything-fast==0.1.2
+# torch==2.2.2
+# torchvision==0.17.2
+# segment-anything-fast==0.1.2
+torch
+torchvision
+segment-anything-fast
+ipykernel
+gdown
