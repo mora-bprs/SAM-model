@@ -46,6 +46,7 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 - [ ] Add references and license information of models and repos
 - [ ] Move all dataset and weights hosting to github and huggingface
 - [ ] Integrate SAM into fastSAM notebook for comparision
+- [ ] Time Profiling for comparisions and benchmarks
 - [ ] Implement Python scripts for implementation
 - [ ] Integration with webcam
 - [ ] Move Nix configuration to separate branch
