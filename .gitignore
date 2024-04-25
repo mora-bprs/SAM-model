@@ -3,13 +3,9 @@ __pycache__
 .venv/
 venv/
 
-# nix environment
-.direnv/
-
 # temp files
-annotate/**
-lib/**
-weights/**
+annotate/
+lib/
+weights/
 train/
 box_train.zip
-**/FastSAM/

@@ -44,6 +44,7 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 - [x] Simplify dependency graph
 - [x] Simplify code logic to recreate the results on all platforms
 - [ ] Add references and license information of models and repos
+- [ ] Exception handling and assertions: null mask handling, assertions in python scripts
 - [ ] Move all dataset and weights hosting to github and huggingface
 - [ ] Integrate SAM into fastSAM notebook for comparision
 - [ ] Time Profiling for comparisions and benchmarks
