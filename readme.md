@@ -47,8 +47,12 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 - [ ] Exception handling and assertions: null mask handling, assertions in python scripts
 - [ ] Move all dataset and weights hosting to github and huggingface
 - [ ] Integrate SAM into fastSAM notebook for comparision
+- [ ] Implement plot with score
 - [ ] Time Profiling for comparisions and benchmarks
 - [ ] Implement Python scripts for implementation
+- [ ] Switch to np.random for all random generation
+- [ ] Include logic to look on the 8 corners when nothing found on the center
+- [ ] Implement model tuning controls to adjust detection
 - [ ] Integration with webcam
 - [ ] Move Nix configuration to separate branch
 - [ ] Prepare the branch for merging
