@@ -43,16 +43,19 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 ## Pending Tasks
 - [x] Simplify dependency graph
 - [x] Simplify code logic to recreate the results on all platforms
-- [ ] Add references and license information of models and repos
+- [Sasika] Add references and license information of models and repos
 - [ ] Exception handling and assertions: null mask handling, assertions in python scripts
-- [ ] Move all dataset and weights hosting to github and huggingface
+- [Sasika] Move all dataset and weights hosting to github and huggingface
 - [ ] Integrate SAM into fastSAM notebook for comparision
-- [ ] Implement plot with score
+- [Sasika] Implement plot with score
 - [ ] Time Profiling for comparisions and benchmarks
 - [ ] Implement Python scripts for implementation
 - [ ] Switch to np.random for all random generation
 - [ ] Include logic to look on the 8 corners when nothing found on the center
-- [ ] Implement model tuning controls to adjust detection
-- [ ] Integration with webcam
-- [ ] Move Nix configuration to separate branch
+- [Sasika] Implement model tuning controls to adjust detection
+- [Sasika] Integration with webcam
+- [x] Move Nix configuration to separate branch
 - [ ] Prepare the branch for merging
+- [ ] Roadmap to detect and mask other categories (Humans, Vehicles)
+- [ ] Bin Picking literary review
+- [ ] Integrating Model Coordinates with Kuka Arm and ROS
