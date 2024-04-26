@@ -1,5 +1,11 @@
+# python housekeeping
 __pycache__
-box_train 
+.venv/
+venv/
+
+# temp files
+annotate/
+lib/
+weights/
+train/
 box_train.zip
-FastSAM-s.pt
-FastSAM-x.pt

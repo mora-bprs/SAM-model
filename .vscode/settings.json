@@ -1,0 +1,23 @@
+{
+    "cSpell.words": [
+        "CHKPOINTS",
+        "edgecolor",
+        "facecolor",
+        "fastsam",
+        "figsize",
+        "gdown",
+        "imgsz",
+        "imread",
+        "imshow",
+        "linewidth",
+        "torchvision",
+        "yachalk"
+    ],
+    "cSpell.allowCompoundWords": true,
+    "notebook.diff.ignoreOutputs": true,
+    "notebook.formatOnSave.enabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "python.terminal.activateEnvironment": true,
+}

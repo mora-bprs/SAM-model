@@ -1,5 +1,6 @@
 import cv2
 
+
 def camera(index):
     # Open the default camera (usually the first one)
     cap = cv2.VideoCapture(index)
@@ -19,20 +20,19 @@ def camera(index):
             break
 
         # Display the frame
-        cv2.imshow('Webcam', frame)
+        cv2.imshow("Webcam", frame)
 
         # Check for 'q' key press to exit the loop
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
     # Release the capture
     cap.release()
     cv2.destroyAllWindows()
 
+
 if __name__ == "__main__":
     try:
         camera(1)
     except Exception as e:
         print(e)
-
-
