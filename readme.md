@@ -44,9 +44,9 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 
 source : [https://pypi.org/project/segment-anything-fast/](https://pypi.org/project/segment-anything-fast/)
 
-Two model versions of the model are available with different sizes. Click the links below to download the checkpoint for the corresponding model type. 
+Two model versions of the model are available with different sizes. Click the links below to download the checkpoint for the corresponding model type.
 
-- `default` or `FastSAM``: [YOLOv8x based Segment Anything Model](https://drive.google.com/file/d/1m1sjY4ihXBU1fZXdQ-Xdj-mDltW-2Rqv/view?usp=sharing) | [Baidu Cloud (pwd: 0000)](https://pan.baidu.com/s/18KzBmOTENjByoWWR17zdiQ?pwd=0000).
+- `default` or `FastSAM`: [YOLOv8x based Segment Anything Model](https://drive.google.com/file/d/1m1sjY4ihXBU1fZXdQ-Xdj-mDltW-2Rqv/view?usp=sharing) | [Baidu Cloud (pwd: 0000)](https://pan.baidu.com/s/18KzBmOTENjByoWWR17zdiQ?pwd=0000).
 - FastSAM-s: [YOLOv8s based Segment Anything Model](https://drive.google.com/file/d/10XmSj6mmpmRb8NhXbtiuO9cTTBwR_9SV/view).
 
 ## Pending Tasks
@@ -60,13 +60,15 @@ Two model versions of the model are available with different sizes. Click the li
 - [ ] Integrate SAM into fastSAM notebook for comparision
 - [Sasika] Implement plot with score
 - [ ] Time Profiling for comparisions and benchmarks
-- [ ] Implement Python scripts for implementation
-- [ ] Switch to np.random for all random generation
+- [ ] Implement Python scripts for demonstration
+- [x] Switch to np.random for all random generation
 - [ ] Include logic to look on the 8 corners when nothing found on the center
 - [Sasika] Implement model tuning controls to adjust detection
 - [Sasika] Integration with webcam
 - [x] Move Nix configuration to separate branch
-- [ ] Prepare the branch for merging
+
+## Long Term Goals
 - [ ] Roadmap to detect and mask other categories (Humans, Vehicles)
 - [ ] Bin Picking literary review
 - [ ] Integrating Model Coordinates with Kuka Arm and ROS
+- [ ] Integrate with common script to switch and test model performance at will
