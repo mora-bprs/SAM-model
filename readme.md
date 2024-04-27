@@ -40,10 +40,21 @@ WIP - Detailed Documentation at [SAM Documentation](https://mora-bprs.github.io/
 - Use python version 3.10 or 3.11 for maximum compatibility
 - `pip install -r requirements.txt` will take a long time at first in local testing depending on the python version you choose. Sit back and have a coffee.
 
+## Model Checkpoints
+
+source : [https://pypi.org/project/segment-anything-fast/](https://pypi.org/project/segment-anything-fast/)
+
+Two model versions of the model are available with different sizes. Click the links below to download the checkpoint for the corresponding model type. 
+
+- `default` or `FastSAM``: [YOLOv8x based Segment Anything Model](https://drive.google.com/file/d/1m1sjY4ihXBU1fZXdQ-Xdj-mDltW-2Rqv/view?usp=sharing) | [Baidu Cloud (pwd: 0000)](https://pan.baidu.com/s/18KzBmOTENjByoWWR17zdiQ?pwd=0000).
+- FastSAM-s: [YOLOv8s based Segment Anything Model](https://drive.google.com/file/d/10XmSj6mmpmRb8NhXbtiuO9cTTBwR_9SV/view).
+
 ## Pending Tasks
+
 - [x] Simplify dependency graph
 - [x] Simplify code logic to recreate the results on all platforms
-- [Sasika] Add references and license information of models and repos
+- [sasika] Add licence information of models
+- [x] Add references of models and repos
 - [ ] Exception handling and assertions: null mask handling, assertions in python scripts
 - [Sasika] Move all dataset and weights hosting to github and huggingface
 - [ ] Integrate SAM into fastSAM notebook for comparision
