@@ -1,5 +1,5 @@
 import torch
-from src.utils import (
+from script.utils import (
     get_device,
     get_model,
     plot_square,
@@ -8,16 +8,13 @@ from src.utils import (
     show_box,
     show_mask,
     show_points,
+    get_box_coordinates,
+    get_image_with_box_corners,
 )
-
+from script.config import fast_sam_checkpoint, fast_sam_s_checkpoint
 import numpy as np
 from matplotlib import pyplot as plt
 from fastsam import FastSAM, FastSAMPrompt
-from src.utils import get_box_coordinates, get_image_with_box_corners
-
-# Configuration
-fast_sam_checkpoint = "/content/FastSAM-x.pt"
-fast_sam_s_checkpoint = "/content/FastSAM-s.pt"
 
 # device = get_device()
 device = "cpu"

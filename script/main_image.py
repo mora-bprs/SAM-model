@@ -1,5 +1,5 @@
 import torch, time
-from src.utils import (
+from script.utils import (
     get_device,
     get_model,
     plot_square,
@@ -13,7 +13,7 @@ from src.utils import (
 import numpy as np
 from matplotlib import pyplot as plt
 from fastsam import FastSAM, FastSAMPrompt
-from src.utils import get_box_coordinates, get_image_with_box_corners
+from script.utils import get_box_coordinates, get_image_with_box_corners
 
 # Configuration
 fast_sam_checkpoint = "/content/FastSAM-x.pt"

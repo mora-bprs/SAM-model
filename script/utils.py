@@ -1,5 +1,5 @@
 import torch
-import src.config as config
+import script.config as config
 import torch
 import cv2
 import numpy as np
