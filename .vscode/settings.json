@@ -12,6 +12,7 @@
         "imread",
         "imshow",
         "linewidth",
+        "ndarray",
         "onnxruntime",
         "tkinter",
         "torchvision",
