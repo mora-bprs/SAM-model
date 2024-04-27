@@ -16,8 +16,8 @@ from fastsam import FastSAM, FastSAMPrompt
 from src.utils import get_box_coordinates, get_image_with_box_corners
 
 # Configuration
-fast_sam_checkpoint = "/content/FastSAM-x.pt"
-fast_sam_s_checkpoint = "/content/FastSAM-s.pt"
+fast_sam_checkpoint = "../weights/FastSAM-x.pt/"
+fast_sam_s_checkpoint = "../weights/FastSAM-s.pt"
 
 # device = get_device()
 device = "cpu"
