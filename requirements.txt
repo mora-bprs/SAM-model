@@ -1,6 +1,7 @@
 # torch==2.2.2
 # torchvision==0.17.2
 # segment-anything-fast==0.1.2
+# Add the version of each library
 torch
 torchvision
 segment-anything-fast

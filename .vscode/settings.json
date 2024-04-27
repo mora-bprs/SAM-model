@@ -10,6 +10,7 @@
         "imread",
         "imshow",
         "linewidth",
+        "onnxruntime",
         "torchvision",
         "yachalk"
     ],
