@@ -1,5 +1,27 @@
 import cv2
 import time
+import torch
+from utils import get_device, get_model, plot_square, plot_image, annotate_square_corners, show_box, show_mask, show_points
+import numpy as np
+from matplotlib import pyplot as plt
+from fastsam import FastSAM, FastSAMPrompt
+from utils import get_box_coordinates, get_image_with_box_corners, annotate_frame_with_mask
+import cv2
+import threading
+import time
+
+# Configuration
+fast_sam_checkpoint = "weights/FastSAM-x.pt"
+fast_sam_s_checkpoint = "weights/FastSAM-s.pt"
+
+# device = get_device()
+device = "cpu"
+
+# #######################################
+# model_name = input("Enter the model name you want >>> ")
+model_name = "fastSAM-s"
+
+model = get_model(model_name)
 
 # Define the camera index
 camera_index = 1
@@ -27,11 +49,22 @@ while True:
         break
 
     # Adding a delay for simulating time taken for processing a frame
-    delay = 0.03  # Delay value in seconds
-    time.sleep(delay)
-    num_frames_processed += 1
+    try:
+      # box_corners_dict = get_box_coordinates(frame, model, device, False, False, False)
+      # print(box_corners_dict)
+      
+      # TO PLOT THE BOX CORNERS
+      # annotated_frame = get_image_with_box_corners(frame, box_corners_dict)  # in RGB
+      
+      # TO PLOT THE MASK 
+      annotated_frame = annotate_frame_with_mask(frame, model, device, False, False, False)
+      num_frames_processed += 1
 
-    cv2.imshow('frame', frame)
+      cv2.imshow('frame', annotated_frame)
+      
+    except ValueError:  # No box is detected
+      cv2.imshow('frame', frame)
+      
     key = cv2.waitKey(1)
     if key == ord('q'):
         break
