@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "CHKPOINTS",
+        "cmap",
+        "COLAB",
         "edgecolor",
         "facecolor",
         "fastsam",
@@ -10,8 +12,11 @@
         "imread",
         "imshow",
         "linewidth",
+        "ndarray",
         "onnxruntime",
+        "tkinter",
         "torchvision",
+        "venv",
         "yachalk"
     ],
     "cSpell.allowCompoundWords": true,
