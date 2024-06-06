@@ -9,8 +9,8 @@ models for box detection tasks.
 Currently fastSAM.ipynb is partially ready for public consumption
 1. Google Colab
     - Open the notebook in Colab
-        <a target="blank" href="https://colab.research.google.com/github/mora-bprs/SAM-model/blob/thuva/fastSAM.ipynb">
-        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+        <a target="blank" href="https://colab.research.google.com/github/mora-bprs/sam-model/blob/main/fast-sam.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="open stuff in google colab"/>
         </a>
     - Modify the `COLAB` and `INITIALIZED` variables accordingly
     - Menu -> Runtime -> Run All -> Sitback and Relax
