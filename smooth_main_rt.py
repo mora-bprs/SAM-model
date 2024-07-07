@@ -62,7 +62,7 @@ class WebcamStream:
         self.stopped = True
 
 # Define the camera index
-camera_index = 1
+camera_index = 0
 
 webcam_stream = WebcamStream(stream_id=camera_index, buffer_size=2)  # Set the buffer size here
 webcam_stream.start()

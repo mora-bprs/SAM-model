@@ -27,7 +27,7 @@ model = get_model(model_name)
 # image_path = input("Enter the image path >>>")
 start = time.time()
 
-image_path = "box_train/train/box_42.jpg"
+image_path = r"D:\New bin picking\demo_image.jpg"
 # image_path = r"E:\Projects Archive\3_EDR-bin picking\SAM Model\box_train\train\box_104.jpg" #not fine
 # image_path = "./box_train/train/box_17.jpg" # fine
   
