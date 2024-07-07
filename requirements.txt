@@ -20,6 +20,8 @@ ultralytics == 8.0.120
 ipykernel
 gdown
 yachalk
+questionary
+rich
 
 segment-anything-fast
 
